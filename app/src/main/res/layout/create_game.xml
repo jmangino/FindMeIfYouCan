@@ -6,14 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".CreateGameActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number of Players"
-        android:textSize="20dp"
-        android:id="@+id/numplayers"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="30dp" />
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Players:"
+            android:textSize="20dp"
+            android:id="@+id/numplayers"
+            android:paddingTop="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:id="@+id/textShowPlayers"
+            android:textSize="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:backgroundTint="#ffffffff"
+            android:background="#ffffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:autoText="false"
+            android:singleLine="false" />
+    </LinearLayout>
 
     <SeekBar
         android:layout_width="match_parent"
@@ -53,14 +75,32 @@
 
     </RelativeLayout>
     <!-- time input -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time Limit (minutes)"
-        android:id="@+id/timelimit"
-        android:textSize="20dp"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="30dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time Limit (minutes):"
+            android:id="@+id/timelimit"
+            android:textSize="20dp"
+            android:paddingTop="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/textShowTime"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#ffffffff" />
+    </LinearLayout>
 
     <SeekBar
         android:layout_width="match_parent"

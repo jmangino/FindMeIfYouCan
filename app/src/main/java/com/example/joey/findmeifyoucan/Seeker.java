@@ -13,12 +13,19 @@ public class Seeker extends Activity {
 
     private TextView timeRemaining;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seeker);
+
+        //time and players are produced on a 0 to 100 scale from view
         int players = this.getIntent().getIntExtra("numplayers",4);
         int time = this.getIntent().getIntExtra("timelimit",10);
+
+       // time = MINTIME+(time/100)*(MAXTIME-MINTIME);
+
         timeRemaining = (TextView) this.findViewById(R.id.time_remaining_count);
         timeRemaining.setText(String.valueOf(time)+":00");
     }

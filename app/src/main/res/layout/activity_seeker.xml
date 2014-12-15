@@ -52,7 +52,7 @@
         <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:weightSum="1">
 
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:text="Hint"
             android:id="@+id/buttonhint"
-            android:padding="10dp"
+            android:layout_margin="10dp"
             android:layout_weight="0.5" />
 
         <Button
@@ -70,9 +70,17 @@
             android:text="Give Up"
             android:id="@+id/buttongiveup"
             android:layout_weight="0.5"
-            android:padding="10dp"
+            android:layout_margin="10dp"
             android:onClick="giveUp" />
         </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Seeker"
+                android:id="@+id/textView9"
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
 

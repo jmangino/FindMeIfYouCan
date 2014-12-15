@@ -38,4 +38,8 @@ public class DefaultActivity extends Activity {
         Intent intent = new Intent(this, CreateGameActivity.class);
         startActivity(intent);
     }
+
+    public void joinGame(View view){
+        //implement?
+    }
 }

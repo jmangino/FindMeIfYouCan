@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -43,7 +43,12 @@
             android:value="AIzaSyDdQ15w4GdPVfaLRAUB2M3q0I8P8kUjKRg" />
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="4030500"/>
+            android:value="4030500" />
+
+        <activity
+            android:name=".Hider"
+            android:label="@string/title_activity_hider" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,98 @@
+<ViewSwitcher xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Hider"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hider_switcher">
+
+
+    <!-- VIEW MAIN-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Time Remaining:"
+                android:id="@+id/hider_textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8:00"
+                android:id="@+id/hider_time_remaining_count"
+                android:layout_toRightOf="@+id/hider_textView"
+                android:layout_toEndOf="@+id/hider_textView"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+        </RelativeLayout>
+
+        <fragment
+            android:id="@+id/hider_map"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            class="com.google.android.gms.maps.MapFragment" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I've Been Found"
+                android:id="@+id/hider_buttonFound"
+                android:layout_margin="10dp"
+                android:layout_weight="0.5" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Give Up"
+                android:id="@+id/hider_buttongiveup"
+                android:layout_weight="0.5"
+                android:layout_margin="10dp"
+                android:onClick="giveUp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Hider"
+            android:id="@+id/textView8"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+    <!-- VIEW MESSAGES -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:id="@+id/message1"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:text="@string/message_test"/>
+    </LinearLayout>
+
+</ViewSwitcher>

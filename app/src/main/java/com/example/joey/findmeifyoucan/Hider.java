@@ -35,7 +35,7 @@ import java.util.TimerTask;
 
 
 
-public class Seeker extends Activity implements GestureDetector.OnGestureListener {
+public class Hider extends Activity implements GestureDetector.OnGestureListener {
 
     private TextView timeRemaining;
 
@@ -61,13 +61,13 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
         int time = this.getIntent().getIntExtra("timelimit",10);
         radius = this.getIntent().getIntExtra("radius",1000);
 
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.hider_map)).getMap();
 
         setUpMap(map);
 
         startCountdown(time);
 
-        switcher = (ViewSwitcher) this.findViewById(R.id.seeker_switcher);
+        switcher = (ViewSwitcher) this.findViewById(R.id.hider_switcher);
 
 
     }
@@ -137,7 +137,7 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
     }
 
     private void startCountdown(int time){
-        timeRemaining = (TextView) this.findViewById(R.id.time_remaining_count);
+        timeRemaining = (TextView) this.findViewById(R.id.hider_time_remaining_count);
         timeRemaining.setText(String.valueOf(time)+":00");
         //START TIMER
         timeend = System.currentTimeMillis() + time * 1000 * 60 ;
@@ -145,7 +145,7 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
         t.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                Seeker.this.runOnUiThread(new Runnable() {
+                Hider.this.runOnUiThread(new Runnable() {
                     public void run(){
                         long remaining = Math.max(0, timeend - System.currentTimeMillis());
                         int minutes = (int) (remaining / (60 * 1000));
@@ -156,7 +156,7 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
                         sb.append(sm);
                         sb.append(':');
                         sb.append(ss);
-                        TextView timeremaining = (TextView) Seeker.this.findViewById(R.id.time_remaining_count);
+                        TextView timeremaining = (TextView) Hider.this.findViewById(R.id.hider_time_remaining_count);
                         timeremaining.setText(sb.toString());
                     }
                 });//run on ui thread

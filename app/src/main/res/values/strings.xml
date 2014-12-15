@@ -8,5 +8,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_seeker">Seeker</string>
     <string name="hello_world">Hello world!</string>
+    <string name="message_test">MESSAGE 1</string>
 
 </resources>

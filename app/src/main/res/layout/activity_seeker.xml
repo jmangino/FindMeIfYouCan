@@ -1,12 +1,18 @@
-<LinearLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<ViewSwitcher xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".Seeker"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/seeker_switcher">
 
-    <RelativeLayout
+
+<!-- VIEW MAIN-->
+        <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:layout_gravity="center_horizontal">
@@ -35,16 +41,15 @@
             android:textSize="20dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp" />
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/map" />
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            class="com.google.android.gms.maps.MapFragment" />
 
-    <LinearLayout
+        <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,14 +61,30 @@
             android:layout_height="wrap_content"
             android:text="Hint"
             android:id="@+id/buttonhint"
+            android:padding="10dp"
             android:layout_weight="0.5" />
 
         <Button
-            android:layout_width="136dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Give Up"
             android:id="@+id/buttongiveup"
             android:layout_weight="0.5"
+            android:padding="10dp"
             android:onClick="giveUp" />
+        </LinearLayout>
+
+        </LinearLayout>
+
+    <!-- VIEW MESSAGES -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:id="@+id/message1"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:text="@string/message_test"/>
     </LinearLayout>
-</LinearLayout>
+
+</ViewSwitcher>

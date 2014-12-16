@@ -1,0 +1,7 @@
+Application: Find Me If You Can
+
+To run this app, download the source folder. In your IDE use the File > Import Project menu to load
+the project. The code will need a physical or virtual (emulator) android device to run.
+
+To run on a physical device, USB debugging must be enabled, and you will need an ADB driver for
+your USB to execute adb commands on your device.

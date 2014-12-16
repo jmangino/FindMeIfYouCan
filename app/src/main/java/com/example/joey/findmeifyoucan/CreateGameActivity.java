@@ -59,7 +59,7 @@ public class CreateGameActivity extends Activity {
     }
 
     public void goToGame(View view){
-        Intent intent = new Intent(this, Seeker.class);
+
         SeekBar playersbar = (SeekBar) this.findViewById(R.id.seekBar);
         SeekBar timebar = (SeekBar) this.findViewById(R.id.seekBar2);
         SeekBar radbar = (SeekBar)  this.findViewById(R.id.seekBar3);
@@ -67,10 +67,13 @@ public class CreateGameActivity extends Activity {
         int players = (int)(MINPLAYERS+((double)playersbar.getProgress()/playersbar.getMax())*(MAXPLAYERS-MINPLAYERS));
         int time = (int)(MINTIME+((double)timebar.getProgress()/timebar.getMax())*(MAXTIME-MINTIME));
         int rad = (int)(MINRAD+((double)radbar.getProgress()/radbar.getMax())*(MAXRAD-MINRAD));
+        Intent intent = (time%2==0)?new Intent(this,Seeker.class):new Intent(this,Hider.class);
 
         intent.putExtra("numplayers",players);
         intent.putExtra("timelimit",time);
         intent.putExtra("radius",rad);
+
+
         this.startActivity(intent);
     }
 

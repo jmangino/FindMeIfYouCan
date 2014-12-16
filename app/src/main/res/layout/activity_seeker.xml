@@ -89,9 +89,9 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
         <TextView
-            android:id="@+id/message1"
+            android:id="@+id/seeker_message1"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="480dp"
             android:text="@string/message_test"/>
     </LinearLayout>
 

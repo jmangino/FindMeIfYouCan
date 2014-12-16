@@ -29,6 +29,10 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.CircleOptionsCreator;
 import com.google.android.gms.maps.model.LatLng;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Formatter;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -56,7 +60,7 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seeker);
         detector = new GestureDetector(this, this);
-        //time and players are produced on a 0 to 100 scale from view
+
         int players = this.getIntent().getIntExtra("numplayers",4);
         int time = this.getIntent().getIntExtra("timelimit",10);
         radius = this.getIntent().getIntExtra("radius",1000);
@@ -69,7 +73,7 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
 
         switcher = (ViewSwitcher) this.findViewById(R.id.seeker_switcher);
 
-
+        fakeMessages();
     }
 
     @Override
@@ -81,6 +85,15 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
         Notification notification = b.build();
         NotificationManager nm =  (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         nm.notify(1,notification);
+
+    }
+
+
+    private void fakeMessages(){
+
+        Seeker.this.addMessage("Harvey gave up.");
+        Seeker.this.addMessage("Angela went out of bounds.");
+        Seeker.this.addMessage("Angela returned to the game.");
 
     }
 
@@ -225,5 +238,12 @@ public class Seeker extends Activity implements GestureDetector.OnGestureListene
             switcher.showPrevious();
         }
         return false;
+    }
+
+    private void addMessage(String s){
+        TextView text_top = (TextView) this.findViewById(R.id.seeker_message1);
+        SimpleDateFormat format = new SimpleDateFormat("h:mm:ss");
+        text_top.append("\n\n"+new Formatter()+format.format(new Date())+"\n"+s);
+        text_top.invalidate();
     }
 }
